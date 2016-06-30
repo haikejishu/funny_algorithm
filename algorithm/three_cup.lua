@@ -1,16 +1,14 @@
 local util = require( "util" )
-require( "./debug" )
-
 local count = 0
 
 local cup 	= { 8, 5, 3}
 local start_status = { 8, 0, 0 }
 local end_status = { 4, 4, 0}
 
-local AllStates = require( "dList" )
-
+local three_cup = class( "three_cup" )
 
 local OneState = {  }  -- { state = { cup1, cup2, cup3}, action = { from, to, water }  }
+
 
 
 function canDump( state, from, to )
@@ -86,7 +84,10 @@ function SearchStatesOnAction( states, state, from, to )
 		if not isProcessedState( states, new_state ) then
 			states:addRight( new_state )
 			SearchStates( states )
-			states:popRight( )
+			if new_state.pos == 1 then
+				states:popRight( )
+				states:popRight( )
+			end
 		end
 	end
 end
@@ -108,6 +109,7 @@ function SearchStates( states )
 	end
 end
 
+local AllStates = dList:new()
 AllStates:addRight( start_status )
 SearchStates( AllStates )
 

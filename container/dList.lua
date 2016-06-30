@@ -1,10 +1,10 @@
 	-- data = nil,
 	-- left = nil,
 	-- right = nil,
+-- , 
 
-local dList = {
-	data = nil,
-}
+local dList = class( "dList" )
+
 
 function dList:addLeft( data )	
 	if self.head then
@@ -113,6 +113,5 @@ function dList:getCount( )
 	end
 	return count
 end
-
 
 return dList
