@@ -21,5 +21,14 @@ function util.table_new( _table_)
     return util.table_copy(_table_)
 end
 
+-- 洗牌，把数组里面的元素打乱
+function util.array_break( _array )
+	local count = #_array
+	for i=1, count do
+		local r1 = math.random( 1, count )
+		local r2 = math.random( 1, count )
+		_array[r1], _array[r2] = _array[r2], _array[r1]
+	end
+end
 
 return util
