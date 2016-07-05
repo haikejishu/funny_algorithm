@@ -79,32 +79,6 @@ function RLE_DECODE( inFile, outFile )
 	local data = util.readFile( inFile )
 
 	local length = #data
-	local checkRep = function ( start, data )    	-- 检查重复
-		local last = string.byte( data, start )
-		local count = 1
-		while( last == string.byte(data, start + count) ) do
-			last = string.byte(data, start + count)
-			if count == 127 then
-				break
-			end
-			count = count + 1
-		end
-		return true, count	
-	end
-
-	local checkNoRep = function ( start, data ) 		-- 检查不重复
-		local last = string.byte( data, start )
-		local count = 1
-		while( last ~= string.byte(data, start + count) ) do
-			last = string.byte(data, start + count)
-			if count == 127 then
-				break
-			end
-			count = count + 1
-		end
-		return true, count
-	end
-
 
 	local file = io.open( outFile, "w" )
 	local start = 1
