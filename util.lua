@@ -31,4 +31,15 @@ function util.array_break( _array )
 	end
 end
 
+
+function util.readFile( file_path )
+	local data
+	local file = io.open( file_path, "r" )
+	if file then
+		data = file:read("*a")
+		file:close()
+	end
+	return data
+end
+
 return util
