@@ -11,3 +11,4 @@ some funny algorthm practice used by lua
 2. 妖怪和尚过河（穷举法）
 3. 稳定匹配算法（gale shapley）
 4. 压缩算法（RLE压缩）
+5. 万年历
