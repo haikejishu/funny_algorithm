@@ -12,3 +12,4 @@ some funny algorthm practice used by lua
 3. 稳定匹配算法（gale shapley）
 4. 压缩算法（RLE压缩）
 5. 万年历
+6. 迭代法（二分迭代，牛顿迭代）
