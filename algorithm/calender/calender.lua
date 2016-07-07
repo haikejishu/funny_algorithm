@@ -35,7 +35,7 @@ function calender:printValender( year, month )
 		local msg = ""
 		for i=1, 7 do
 			local t = days[count + i]
-			if t.day then
+			if t and t.day then
 				msg = msg .. string.format( " %d/%d ", t.day, t.week ) 
 			else
 				msg = msg .. "      "
@@ -60,8 +60,7 @@ print("\n\n\n")
 
 calender:printValender( 2016, 07 )
 
-
-
+calender:printValender( 2016, 08 )
 
 
 return calender
